@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movies - Simple Movie Database</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -16,37 +16,16 @@
   </header>
 
   <div class="container">
-    <div class="content">
-      <div class="pagination-bar">
-        <div class="pagination-info">
-          <span id="page-label">Page 1</span>
-          <div class="pagination-buttons">
-            <button id="btn-first" class="btn btn-secondary">First</button>
-            <button id="btn-prev" class="btn btn-secondary">Prev</button>
-            <button id="btn-next" class="btn btn-secondary">Next</button>
-            <button id="btn-last" class="btn btn-secondary">Last</button>
-          </div>
-        </div>
-        <div class="items-per-page">
-          <label for="page-size-select">Items per page:</label>
-          <select id="page-size-select">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15" selected>15</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
-        </div>
-      </div>
+    <div id="message-container"></div>
 
-      <div id="loading" class="loading hidden">Loading movies...</div>
-      <div id="error-message" class="message error hidden"></div>
-      <div id="success-message" class="message success hidden"></div>
+    <div id="pagination-bar" class="pagination-bar"></div>
 
-      <div id="movies-grid" class="movie-grid"></div>
-    </div>
+    <div id="loading" class="loading" style="display: none;">Loading movies...</div>
+    <div id="movies-grid" class="movie-grid"></div>
   </div>
 
-  <script type="module" src="/movies.js"></script>
+  <script src="/movies.js"></script>
+</body>
+</html>
 </body>
 </html>

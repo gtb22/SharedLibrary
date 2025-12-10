@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Movie Database</title>
     <link rel="stylesheet" href="/styles.css">
-    <meta name="description" content="Simple Movie Database - browse and manage movies">
 </head>
 <body>
     <header>
@@ -13,16 +12,13 @@
     </header>
 
     <div class="container">
-        <div class="content welcome-section">
-            <h2>Welcome to Simple Movie Database</h2>
-            <p>
-                Welcome! Use the navigation above to browse, add, view, edit, or remove movies.
-                Each page loads only the JS it needs via ES modules.
-            </p>
-            <a href="/movies.html" class="btn btn-secondary">Browse Movies</a>
+        <div class="home-content">
+            <h2>Welcome</h2>
+            <p>Explore our collection of movies. Click below to get started.</p>
+            <a href="/movies.html" class="btn btn-primary" onclick="window.location.href='/movies.html'; return false;">Browse Movies</a>
         </div>
     </div>
 
-    <script type="module" src="/index.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>

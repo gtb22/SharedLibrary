@@ -1,26 +1,70 @@
-import { ApiClient, UI } from '/api.js';
-let movieId = null;
+const API_BASE = 'http://localhost:5000/api/v1';
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  movieId = UI.getQueryParam('id');
-  if(!movieId){ UI.showMessage('status-message','Missing ?id in URL.','error'); return; }
-  document.getElementById('edit-btn').href = `/edit-movie.html?id=${movieId}`;
-  loadMovie();
-});
+// Show message banner
+function showMessage(text, type) {
+  const container = document.getElementById('message-container');
+  const div = document.createElement('div');
+  div.className = `message ${type}`;
+  div.textContent = text;
+  container.innerHTML = '';
+  container.appendChild(div);
+}
 
-async function loadMovie(){
-  try{
-    const movie = await ApiClient.getMovie(movieId);
-    document.getElementById('movie-id').textContent = movie.id || '-';
-    document.getElementById('movie-title').textContent = movie.title || '-';
-    document.getElementById('movie-year').textContent = movie.year || '-';
-    document.getElementById('movie-description').textContent = movie.description || '-';
-    UI.showMessage('status-message','Movie loaded successfully.','success');
-  }catch(err){
-    document.getElementById('movie-id').textContent = '-';
-    document.getElementById('movie-title').textContent = '-';
-    document.getElementById('movie-year').textContent = '-';
-    document.getElementById('movie-description').textContent = '-';
-    UI.showMessage('status-message',`Failed to load movie ${movieId}: Could not read movie with id ${movieId}.`,'error');
+// Get query parameter
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+// Load movie data
+async function loadMovie() {
+  const movieId = getQueryParam('id');
+
+  if (!movieId) {
+    showMessage('No movie ID provided.', 'error');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE}/movies/${movieId}`);
+    const data = await response.json();
+
+    if (!response.ok || !data.Success) {
+      throw new Error(data.Message || 'Failed to load movie');
+    }
+
+    const movie = data.Data;
+    document.getElementById('movie-id').textContent = movie.Id || 'N/A';
+    document.getElementById('movie-title').textContent = movie.Title || 'Unknown';
+    document.getElementById('movie-year').textContent = movie.Year || 'N/A';
+    document.getElementById('movie-description').textContent = movie.Description || 'No description available.';
+
+    // Show success message
+    showMessage('Movie loaded successfully.', 'success');
+  } catch (error) {
+    showMessage(`Error: ${error.message}`, 'error');
   }
 }
+
+// Edit button handler
+function editMovie() {
+  const movieId = getQueryParam('id');
+  if (movieId) {
+    window.location.href = `/edit-movie.html?id=${movieId}`;
+  }
+}
+
+// Home button handler
+function goHome() {
+  window.location.href = '/index.html';
+}
+
+// All Movies button handler
+function goToMovies() {
+  window.location.href = '/movies.html';
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  loadMovie();
+});
