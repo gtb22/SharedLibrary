@@ -103,7 +103,55 @@ public static class HttpUtils
     public static async Task ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
     {
         var rootDir = GetConfigValue("root.dir", "./wwwroot");
+        
+        // Make path absolute if relative
+        if (!Path.IsPathRooted(rootDir))
+        {
+            // Start from AppContext.BaseDirectory and navigate to find wwwroot
+            var baseDir = new DirectoryInfo(AppContext.BaseDirectory ?? Environment.CurrentDirectory);
+            DirectoryInfo? wwwrootDir = null;
+            
+            // Go up from bin/Debug/net8.0 to find the solution root wwwroot
+            // We keep going until we find a wwwroot that contains index.html
+            for (int i = 0; i < 5 && baseDir != null; i++)
+            {
+                var potentialWwwroot = Path.Combine(baseDir.FullName, "wwwroot");
+                if (Directory.Exists(potentialWwwroot) && File.Exists(Path.Combine(potentialWwwroot, "index.html")))
+                {
+                    wwwrootDir = new DirectoryInfo(potentialWwwroot);
+                    break;
+                }
+                baseDir = baseDir.Parent;
+            }
+            
+            if (wwwrootDir != null)
+            {
+                rootDir = wwwrootDir.FullName;
+            }
+            else
+            {
+                // Fallback: continue walking up from the last baseDir to find solution root wwwroot
+                while (baseDir != null)
+                {
+                    var fallbackWwwroot = Path.Combine(baseDir.FullName, "wwwroot");
+                    if (Directory.Exists(fallbackWwwroot) && File.Exists(Path.Combine(fallbackWwwroot, "index.html")))
+                    {
+                        rootDir = fallbackWwwroot;
+                        break;
+                    }
+                    baseDir = baseDir.Parent;
+                }
+                // If still not found, try current directory
+                if (!File.Exists(Path.Combine(rootDir, "index.html")))
+                {
+                    rootDir = Path.Combine(Environment.CurrentDirectory, "wwwroot");
+                }
+            }
+        }
+        
         var filePath = Path.Combine(rootDir, req.Path.TrimStart('/'));
+        // Normalize the path to avoid issues with ./ or similar
+        filePath = Path.GetFullPath(filePath);
 
         if (File.Exists(filePath))
         {
