@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>View Movie - Simple Movie Database</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>View Movie</h1>
+    <div class="header-buttons">
+      <a href="/index.html" class="btn btn-secondary">Home</a>
+      <a href="/movies.html" class="btn btn-secondary">All Movies</a>
+      <a href="#" id="edit-btn" class="btn btn-secondary">Edit</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content">
+      <div id="status-message" class="message hidden"></div>
+      <table id="movie-table">
+        <tr><th>ID</th><td id="movie-id">-</td></tr>
+        <tr><th>Title</th><td id="movie-title">-</td></tr>
+        <tr><th>Year</th><td id="movie-year">-</td></tr>
+        <tr><th>Description</th><td id="movie-description">-</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <script type="module" src="/view-movie.js"></script>
+</body>
+</html>

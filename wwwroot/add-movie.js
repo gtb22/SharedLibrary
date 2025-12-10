@@ -1,38 +1,19 @@
-import { API_BASE, fetchJson, showMessage, hideMessage } from './common.js';
+import { ApiClient, UI } from '/api.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('add-movie-form');
-    
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const movie = {
-                title: document.getElementById('title').value,
-                year: parseInt(document.getElementById('year').value),
-                description: document.getElementById('description').value,
-                genre: document.getElementById('genre').value,
-                rating: parseFloat(document.getElementById('rating').value) || 0
-            };
-
-            try {
-                const result = await fetchJson(`${API_BASE}/movies`, {
-                    method: 'POST',
-                    body: JSON.stringify(movie)
-                });
-
-                if (result.success) {
-                    showMessage('message', 'Movie added successfully!', 'success');
-                    form.reset();
-                    setTimeout(() => {
-                        window.location.href = '/index.html';
-                    }, 1500);
-                } else {
-                    showMessage('message', result.message || 'Error adding movie', 'error');
-                }
-            } catch (error) {
-                showMessage('message', 'Error: ' + error.message, 'error');
-            }
-        });
-    }
+document.addEventListener('DOMContentLoaded', ()=>{
+  const form = document.getElementById('movie-form');
+  form.addEventListener('submit', handleSubmit);
 });
+
+async function handleSubmit(e){
+  e.preventDefault();
+  const title = document.getElementById('title').value.trim();
+  const year = document.getElementById('year').value.trim();
+  const description = document.getElementById('description').value.trim();
+  if(!title || !year){ UI.showMessage('status-message','Please fill in required fields.','error'); return; }
+  try{
+    await ApiClient.createMovie(title, year, description);
+    UI.showMessage('status-message','Movie created successfully. Redirecting...','success');
+    setTimeout(()=> window.location.href='/movies.html',1200);
+  }catch(err){ UI.showMessage('status-message',`Error: ${err.message}`,'error'); }
+}

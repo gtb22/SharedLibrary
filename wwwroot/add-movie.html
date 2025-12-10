@@ -3,59 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Movie - SimpleMDB</title>
-    <link rel="stylesheet" href="/main.css">
+    <title>Add Movie - Simple Movie Database</title>
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="Add a new movie">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand">SimpleMDB</div>
-            <ul class="navbar-menu">
-                <li><a href="/index.html">Movies</a></li>
-                <li><a href="/add-movie.html">Add Movie</a></li>
-                <li><a href="/actors.html">Actors</a></li>
-                <li><a href="/add-actor.html">Add Actor</a></li>
-            </ul>
+    <header>
+        <h1>Add Movie</h1>
+        <div class="header-buttons">
+            <a href="/index.html" class="btn btn-secondary">Home</a>
+            <a href="/movies.html" class="btn btn-secondary">All Movies</a>
         </div>
-    </nav>
+    </header>
 
-    <main class="container">
-        <div class="page-header">
-            <h1>Add New Movie</h1>
-            <a href="/index.html" class="btn btn-secondary">Back to Movies</a>
+    <div class="container">
+        <div class="content">
+            <div id="status-message" class="message success">New movie. You can edit and save.</div>
+
+            <form id="movie-form">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" name="year" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a href="/movies.html" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
         </div>
-
-        <form id="add-movie-form" class="form">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" required>
-            </div>
-
-            <div class="form-group">
-                <label for="year">Year</label>
-                <input type="number" id="year" name="year" required min="1800" max="2100">
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="5"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="genre">Genre</label>
-                <input type="text" id="genre" name="genre">
-            </div>
-
-            <div class="form-group">
-                <label for="rating">Rating</label>
-                <input type="number" id="rating" name="rating" min="0" max="10" step="0.1">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Add Movie</button>
-        </form>
-
-        <div id="message" class="alert" style="display:none;"></div>
-    </main>
+    </div>
 
     <script type="module" src="/add-movie.js"></script>
 </body>

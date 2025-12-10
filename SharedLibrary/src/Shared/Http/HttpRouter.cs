@@ -103,9 +103,10 @@ public class HttpRouter
                 if (match.Success)
                 {
                     req.PathParams ??= new();
+                    var groupNames = pathRegex.GetGroupNames();
                     for (int i = 1; i < match.Groups.Count; i++)
                     {
-                        var paramName = pathRegex.ToString().Split("(?<")[i]?.Split(">")[0] ?? $"param{i}";
+                        var paramName = groupNames.Length > i ? groupNames[i] : $"param{i}";
                         req.PathParams[paramName] = match.Groups[i].Value;
                     }
 
@@ -122,7 +123,9 @@ public class HttpRouter
             return new Regex(".*");
 
         var pattern = Regex.Escape(path);
-        pattern = Regex.Replace(pattern, @"\\:(\w+)", "(?<$1>[^/]+)");
+        // After Regex.Escape, :id is NOT escaped (colon is not a regex special char)
+        // So we match :(\w+) and replace with the named group pattern
+        pattern = Regex.Replace(pattern, @":(\w+)", "(?<$1>[^/]+)");
         pattern = $"^{pattern}$";
 
         return new Regex(pattern);
