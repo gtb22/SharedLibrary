@@ -1,0 +1,11 @@
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\bin\Debug\net8.0\SimpleMDB.Core.deps.json
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\bin\Debug\net8.0\SimpleMDB.Core.dll
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\bin\Debug\net8.0\SimpleMDB.Core.pdb
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.AssemblyInfoInputs.cache
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.AssemblyInfo.cs
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.csproj.CoreCompileInputs.cache
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.dll
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\refint\SimpleMDB.Core.dll
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\SimpleMDB.Core.pdb
+C:\Users\graci\Documents\test\SimpleMDB\src\SimpleMDB.Core\obj\Debug\net8.0\ref\SimpleMDB.Core.dll

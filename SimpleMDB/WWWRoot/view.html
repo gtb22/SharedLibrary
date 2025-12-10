@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Movie - SimpleMDB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Details</h1>
+        <nav>
+            <a href="index.html">Back to List</a>
+            <a href="#" id="edit-link">Edit</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="message"></div>
+        <div id="movie-details">
+            <h2 id="movie-title"></h2>
+            <p><strong>Year:</strong> <span id="movie-year"></span></p>
+            <p><strong>Rating:</strong> <span id="movie-rating"></span>/10</p>
+            <p><strong>Description:</strong></p>
+            <p id="movie-description"></p>
+        </div>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="view.js"></script>
+</body>
+</html>

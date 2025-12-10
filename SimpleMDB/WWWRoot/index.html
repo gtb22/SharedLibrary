@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleMDB - Movie Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Simple Movie Database</h1>
+        <nav>
+            <a href="add.html">➕ Add Movie</a>
+            <a href="index.html">🏠 Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="message"></div>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="🔍 Search movies by title...">
+        </div>
+        <div id="movie-list"></div>
+        <div id="pagination"></div>
+    </main>
+
+    <template id="movie-card-template">
+        <div class="movie-card">
+            <h3 class="movie-title"></h3>
+            <p class="movie-year"></p>
+            <p class="movie-rating"></p>
+            <p class="movie-description"></p>
+            <div class="movie-actions">
+                <a class="view-link" href="#">View</a>
+                <a class="edit-link" href="#">Edit</a>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="common.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
