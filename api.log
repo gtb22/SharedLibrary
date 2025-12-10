@@ -1,0 +1,16 @@
+C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs(27,52): warning CS8600: Converting null literal or possible null value to non-nullable type. [C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Shared.csproj]
+[Server] Listening on http://localhost:5000
+[a2607be4] GET /api/v1/movies
+[Router] Routing GET /api/v1/movies
+[Router] Checking subrouter prefix '/api/v1' against path '/api/v1/movies'
+[Router] Routing GET /movies
+[Router] Checking subrouter prefix '/movies' against path '/movies'
+[Router] Routing GET /
+[a2607be4] -> 200 (57.46ms)
+[bd0d90de] GET /api/v1/movies/1
+[Router] Routing GET /api/v1/movies/1
+[Router] Checking subrouter prefix '/api/v1' against path '/api/v1/movies/1'
+[Router] Routing GET /movies/1
+[Router] Checking subrouter prefix '/movies' against path '/movies/1'
+[Router] Routing GET /1
+[bd0d90de] -> 404 (5.13ms)

@@ -1,0 +1,12 @@
+2025-12-09T20:59:24.9221031-04:00
+System.NotSupportedException: This stream does not support seek operations.
+   at System.Net.Sockets.NetworkStream.get_Position()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 123
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 118
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
