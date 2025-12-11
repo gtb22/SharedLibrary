@@ -1,6 +1,5 @@
 using Smdb.Core.Db;
 using Smdb.Core.Movies;
-using Smdb.Core.Users;
 using Shared.Http;
 using Shared.Http.Results;
 using Smdb.Api.Controllers;
@@ -25,7 +24,6 @@ public class App
 
         // Create repositories
         var movieRepo = new MemoryMovieRepository();
-        var userRepo = new MemoryUserRepository();
 
         // Create services
         var movieService = new MovieService(movieRepo);

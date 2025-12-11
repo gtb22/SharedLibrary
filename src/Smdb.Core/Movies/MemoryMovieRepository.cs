@@ -28,7 +28,7 @@ public class MemoryMovieRepository : IMovieRepository
     public Task<Result<Movie>> CreateAsync(Movie movie)
     {
         var db = MemoryDatabase.Instance;
-        movie.Id = db.NextMovieId();
+        movie.Id = db.GetNextMovieId();
         db.Movies.Add(movie);
         return Task.FromResult(Result<Movie>.CreateSuccess(movie));
     }

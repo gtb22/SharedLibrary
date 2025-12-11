@@ -38,3 +38,4 @@ C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\refint\Smd
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.genruntimeconfig.cache
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\ref\Smdb.Api.dll
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.sourcelink.json

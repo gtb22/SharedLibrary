@@ -1,5 +1,4 @@
 using Smdb.Core.Movies;
-using Smdb.Core.Users;
 
 namespace Smdb.Core.Db;
 
@@ -9,22 +8,17 @@ public class MemoryDatabase
     public static MemoryDatabase Instance => _instance ??= new MemoryDatabase();
 
     public List<Movie> Movies { get; private set; }
-    public List<User> Users { get; private set; }
 
-    private int _nextMovieId = 1;
-    private int _nextUserId = 1;
+    private int NextMovieId = 1;
 
     private MemoryDatabase()
     {
         Movies = new List<Movie>();
-        Users = new List<User>();
 
         SeedMovies();
-        SeedUsers();
     }
 
-    public int NextMovieId() => ++_nextMovieId;
-    public int NextUserId() => ++_nextUserId;
+    public int GetNextMovieId() => ++NextMovieId;
 
     private void SeedMovies()
     {
@@ -82,26 +76,7 @@ public class MemoryDatabase
             new Movie(50, "Deadpool", 2016, "A wisecracking mercenary seeks revenge after a rogue experiment.")
         });
 
-        _nextMovieId = 50;
-    }
-
-    private void SeedUsers()
-    {
-        Users.Add(new User
-        {
-            Id = NextUserId(),
-            Username = "admin",
-            PasswordHash = SimpleHash("admin123"),
-            Role = UserRole.Admin
-        });
-
-        Users.Add(new User
-        {
-            Id = NextUserId(),
-            Username = "user",
-            PasswordHash = SimpleHash("user123"),
-            Role = UserRole.Regular
-        });
+        NextMovieId = 50;
     }
 
     private static string SimpleHash(string password)

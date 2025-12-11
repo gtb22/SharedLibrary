@@ -2,7 +2,7 @@
 
 A full-stack .NET 8.0 application for managing movies and actors with a custom HTTP server and vanilla JavaScript frontend.
 
-## 🚀 Features
+##Features
 
 - **Movie Management**: View, add, update, and delete movies
 - **Actor Management**: Manage actors in the database
@@ -12,7 +12,7 @@ A full-stack .NET 8.0 application for managing movies and actors with a custom H
 - **Responsive Frontend**: Vanilla JavaScript with clean, modern UI
 - **RESTful API**: Full CRUD endpoints for movies and actors
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SimpleMDB/
@@ -58,7 +58,7 @@ SimpleMDB/
     └── main.css                   # Styling
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Language**: C# .NET 8.0
 - **Backend**: Custom HTTP Server (TcpListener)
@@ -66,7 +66,7 @@ SimpleMDB/
 - **Data**: In-Memory Database with LINQ queries
 - **Architecture**: MVC + Repository Pattern
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -105,7 +105,7 @@ $csrProcess = Start-Process -FilePath dotnet -ArgumentList 'run --project src/Sm
 - **Frontend**: http://localhost:5001
 - **API Documentation**: http://localhost:5000/api/v1
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Movies
 
@@ -154,7 +154,7 @@ PUT    /api/v1/actors/:id       # Update actor
 DELETE /api/v1/actors/:id       # Delete actor
 ```
 
-## 🎯 Key Components
+## Key Components
 
 ### Custom HTTP Server
 
@@ -180,7 +180,7 @@ Located in `SharedLibrary/src/Shared/Http/`:
 - **MemoryRepository**: Generic LINQ-based repository pattern
 - **Services**: Business logic layer (MovieService, ActorService)
 
-## 🔧 Configuration
+## Configuration
 
 ### API Server (src/Smdb.Api/appsettings.cfg)
 
@@ -201,7 +201,7 @@ port=5001
 root.dir=./wwwroot
 ```
 
-## 📊 Data Models
+## Data Models
 
 ### Movie
 
@@ -215,29 +215,16 @@ public class Movie
     public string Genre { get; set; }
     public double Rating { get; set; }
 }
-```
 
-### Actor
 
-```csharp
-public class Actor
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public DateTime BirthDate { get; set; }
-    public string Nationality { get; set; }
-}
-```
-
-## 🧪 Testing
+## Testing
 
 The application comes pre-seeded with:
 - **50 Movies**: Classic films from The Godfather to recent releases
-- **10 Actors**: Popular actors with biographical data
 
 No additional setup needed - just run and browse!
 
-## 🎨 Frontend Pages
+## Frontend Pages
 
 ### Movies Page (/)
 - Display all movies in a paginated list
@@ -250,18 +237,8 @@ No additional setup needed - just run and browse!
 - Validation
 - Auto-redirect to movies page on success
 
-### Actors Page
-- List all actors
-- View actor details
-- Add and remove actors
-- Manage actor-movie relationships
 
-### Add Actor Page
-- Form to create new actors
-- Date picker for birth date
-- Nationality field
-
-## 🔒 Architecture Highlights
+## Architecture Highlights
 
 ### Result Pattern
 All API responses follow a standard result pattern:
@@ -278,7 +255,6 @@ public class Result<T>
 ### Dependency Injection
 Services are instantiated with required repositories:
 - MovieService → MemoryMovieRepository
-- ActorService → MemoryActorRepository
 - AuthService → MemoryUserRepository
 
 ### Error Handling
@@ -286,14 +262,14 @@ Services are instantiated with required repositories:
 - Structured error responses
 - Request ID tracking for debugging
 
-## 🚀 Performance Features
+##  Performance Features
 
 - **In-Memory Database**: Ultra-fast data access
 - **Pagination**: Handle large datasets efficiently
 - **Static File Caching**: Browser-friendly headers
 - **Minimal Dependencies**: Custom HTTP server reduces overhead
 
-## 📝 Git History
+##  Git History
 
 The project is version controlled with meaningful commit messages:
 
@@ -307,7 +283,7 @@ View full history:
 git log --oneline
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Port Already in Use
 ```powershell
@@ -330,20 +306,9 @@ dotnet clean SimpleMDB.sln
 dotnet build SimpleMDB.sln -v detailed
 ```
 
-## 📄 License
+##  License
 
 This is a demonstration project for educational purposes.
 
-## 🤝 Future Enhancements
 
-- [ ] Persistent SQL database
-- [ ] User authentication and authorization
-- [ ] Advanced search filters
-- [ ] Movie ratings and reviews
-- [ ] Actor filmography tracking
-- [ ] API documentation (Swagger)
-- [ ] Unit and integration tests
-
----
-
-**Happy movie browsing! 🎬**
+**Happy movie browsing!**

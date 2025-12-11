@@ -1,0 +1,1108 @@
+2025-12-10T19:50:00.7143534-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T19:56:19.4744301-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:00:11.3909578-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:00:24.9648222-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:02:44.2019269-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:03:52.2740885-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:09:10.4429081-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:31:05.1765357-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:40:00.5591038-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:58:13.9972549-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:58:44.1669720-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T20:59:52.6961006-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-11T13:12:21.8645447-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-11T13:19:07.9009794-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 193
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpServer.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpServer.StartAsync(String host, Int32 port)
+   at Smdb.Api.App.StartAsync(String host, Int32 port) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\App.cs:line 76
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.App.StartAsync(String host, Int32 port)
+   at Program.<Main>$(String[] args) in C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\Program.cs:line 8
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Program.<Main>$(String[] args)
+   at Program.<Main>(String[] args)
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 187
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 177
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 111
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\graci\Documents\(CSR)SimpleMDB\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+

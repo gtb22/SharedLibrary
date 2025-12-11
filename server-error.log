@@ -1,0 +1,6 @@
+2025-12-10T14:21:31.6676266-04:00
+System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
+   at System.IO.Stream.ReadAtLeastAsyncCore(Memory`1 buffer, Int32 minimumBytes, Boolean throwOnEndOfStream, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in c:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 99
+
