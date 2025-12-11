@@ -1,6 +1,6 @@
 namespace Shared.Http;
 
-public interface IHttpResponse
+public interface HttpResponse
 {
     int StatusCode { get; set; }
     Dictionary<string, string> Headers { get; }

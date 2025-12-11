@@ -5,33 +5,33 @@ namespace Shared.Http;
 
 public class HttpRouter
 {
-    private List<(string method, Regex pathRegex, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)> _routes = new();
-    private List<Func<IHttpRequest, IHttpResponse, Hashtable, Func<Task>, Task>> _middlewares = new();
+    private List<(string method, Regex pathRegex, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)> _routes = new();
+    private List<Func<HttpRequest, HttpResponse, Hashtable, Func<Task>, Task>> _middlewares = new();
     private Dictionary<string, HttpRouter> _subrouters = new();
 
     public string BasePath { get; set; } = "";
 
-    public void MapGet(string path, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)
+    public void MapGet(string path, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)
     {
         MapRoute("GET", path, handler);
     }
 
-    public void MapPost(string path, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)
+    public void MapPost(string path, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)
     {
         MapRoute("POST", path, handler);
     }
 
-    public void MapPut(string path, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)
+    public void MapPut(string path, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)
     {
         MapRoute("PUT", path, handler);
     }
 
-    public void MapDelete(string path, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)
+    public void MapDelete(string path, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)
     {
         MapRoute("DELETE", path, handler);
     }
 
-    private void MapRoute(string method, string path, Func<IHttpRequest, IHttpResponse, Hashtable, Task> handler)
+    private void MapRoute(string method, string path, Func<HttpRequest, HttpResponse, Hashtable, Task> handler)
     {
         var regex = ConvertPathToRegex(path);
         _routes.Add((method, regex, handler));
@@ -43,12 +43,12 @@ public class HttpRouter
         _subrouters[path] = router;
     }
 
-    public void Use(Func<IHttpRequest, IHttpResponse, Hashtable, Func<Task>, Task> middleware)
+    public void Use(Func<HttpRequest, HttpResponse, Hashtable, Func<Task>, Task> middleware)
     {
         _middlewares.Add(middleware);
     }
 
-    public async Task HandleContextAsync(IHttpContext context)
+    public async Task HandleContextAsync(HttpContext context)
     {
         var props = context.Properties;
         Func<Task> next = async () =>
@@ -65,7 +65,7 @@ public class HttpRouter
         await next();
     }
 
-    private async Task RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+    private async Task RouteAsync(HttpRequest req, HttpResponse res, Hashtable props)
     {
         var path = req.Path;
         var method = req.Method;

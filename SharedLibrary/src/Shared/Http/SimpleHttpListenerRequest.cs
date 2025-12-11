@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Shared.Http;
 
-public class SimpleHttpListenerRequest : IHttpRequest
+public class SimpleHttpListenerRequest : HttpRequest
 {
     public string Method { get; }
     public string RawPath { get; }

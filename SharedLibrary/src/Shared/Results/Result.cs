@@ -24,7 +24,7 @@ public class Result<T>
         StatusCode = statusCode;
     }
 
-    // Renamed factory methods to avoid name collision with the `Success` property.
+    //Renamed factory methods to avoid name collision with the `Success` property.
     public static Result<T> CreateSuccess(T data)
     {
         return new Result<T> { Success = true, Data = data };

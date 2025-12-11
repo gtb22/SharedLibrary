@@ -6,7 +6,7 @@ namespace Shared.Http;
 
 public static class HttpUtils
 {
-    public static async Task StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task StructuredLogging(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         var requestId = Guid.NewGuid().ToString().Substring(0, 8);
         props["requestId"] = requestId;
@@ -20,7 +20,7 @@ public static class HttpUtils
         Console.WriteLine($"[{requestId}] -> {res.StatusCode} ({elapsed.TotalMilliseconds:F2}ms)");
     }
 
-    public static async Task CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task CentralizedErrorHandling(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         try
         {
@@ -39,7 +39,7 @@ public static class HttpUtils
         }
     }
 
-    public static async Task AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task AddResponseCorsHeaders(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         res.Headers["Access-Control-Allow-Origin"] = "*";
         res.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
@@ -55,12 +55,12 @@ public static class HttpUtils
         await next();
     }
 
-    public static async Task ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task ParseRequestUrl(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         await next();
     }
 
-    public static async Task ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task ParseRequestQueryString(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         var queryIndex = req.RawPath.IndexOf('?');
         if (queryIndex >= 0)
@@ -71,7 +71,7 @@ public static class HttpUtils
         await next();
     }
 
-    public static async Task ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task ReadRequestBodyAsText(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         if (req.Body != null && req.Body.Length > 0)
         {
@@ -81,7 +81,7 @@ public static class HttpUtils
         await next();
     }
 
-    public static async Task ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task ReadRequestBodyAsJson(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         Console.WriteLine($"[Middleware.ReadJson] Body={req.Body?.Length ?? 0} bytes, IsJson={IsJsonContent(req)}");
         Console.Out.Flush();
@@ -111,7 +111,7 @@ public static class HttpUtils
         await next();
     }
 
-    public static async Task ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task ServeStaticFiles(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         var rootDir = GetConfigValue("root.dir", "./wwwroot");
         
@@ -177,7 +177,7 @@ public static class HttpUtils
         await next();
     }
 
-    public static async Task DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
+    public static async Task DefaultResponse(HttpRequest req, HttpResponse res, Hashtable props, Func<Task> next)
     {
         await next();
 
@@ -188,7 +188,7 @@ public static class HttpUtils
         }
     }
 
-    public static async Task Json(IHttpResponse res, object obj, int statusCode = 200)
+    public static async Task Json(HttpResponse res, object obj, int statusCode = 200)
     {
         res.StatusCode = statusCode;
         res.Headers["Content-Type"] = "application/json";
@@ -213,7 +213,7 @@ public static class HttpUtils
         return result;
     }
 
-    private static bool IsJsonContent(IHttpRequest req)
+    private static bool IsJsonContent(HttpRequest req)
     {
         return req.Headers?.TryGetValue("Content-Type", out var contentType) == true && contentType.Contains("application/json");
     }

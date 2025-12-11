@@ -49,7 +49,7 @@ public class App
         Router.Use(HttpUtils.DefaultResponse);
     }
 
-    private async Task ProxyToApiServer(IHttpRequest req, IHttpResponse res, Hashtable props)
+    private async Task ProxyToApiServer(HttpRequest req, HttpResponse res, Hashtable props)
     {
         try
         {

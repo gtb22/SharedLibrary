@@ -19,12 +19,12 @@ C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.cspro
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.genruntimeconfig.cache
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\obj\Debug\net8.0\ref\Smdb.Api.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.exe
-C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.deps.json
-C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.runtimeconfig.json
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.dll
-C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Shared.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Core.dll
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.deps.json
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.runtimeconfig.json
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Api.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Smdb.Core.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\bin\Debug\net8.0\Shared.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.csproj.AssemblyReference.cache
@@ -32,10 +32,10 @@ C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.G
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.AssemblyInfoInputs.cache
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.AssemblyInfo.cs
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.csproj.CoreCompileInputs.cache
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.sourcelink.json
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.csproj.Up2Date
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\refint\Smdb.Api.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.genruntimeconfig.cache
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\ref\Smdb.Api.dll
-C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Api\obj\Debug\net8.0\Smdb.Api.sourcelink.json

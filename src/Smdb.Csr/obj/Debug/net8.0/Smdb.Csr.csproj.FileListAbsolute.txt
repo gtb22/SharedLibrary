@@ -31,3 +31,6 @@ C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\obj\Debug\net8.0\refint\Smdb.Cs
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\obj\Debug\net8.0\Smdb.Csr.pdb
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\obj\Debug\net8.0\Smdb.Csr.genruntimeconfig.cache
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\obj\Debug\net8.0\ref\Smdb.Csr.dll
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Csr\obj\Debug\net8.0\Smdb.Csr.dll
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Csr\obj\Debug\net8.0\refint\Smdb.Csr.dll
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Csr\obj\Debug\net8.0\Smdb.Csr.pdb

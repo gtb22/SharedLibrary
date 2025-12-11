@@ -1,6 +1,6 @@
 namespace Shared.Http;
 
-public interface IHttpRequest
+public interface HttpRequest
 {
     string Method { get; }
     string RawPath { get; }

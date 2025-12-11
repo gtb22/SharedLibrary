@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Shared.Http;
 
-public class SimpleHttpListenerResponse : IHttpResponse
+public class SimpleHttpListenerResponse : HttpResponse
 {
     private NetworkStream _stream;
     private bool _headersSent = false;

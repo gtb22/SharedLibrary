@@ -35,7 +35,6 @@ function clearMessage() {
 async function renderMovies() {
   const loadingEl = document.getElementById('loading');
   const gridEl = document.getElementById('movies-grid');
-  const template = document.getElementById('movie-card-template');
   
   if (loadingEl) loadingEl.style.display = 'block';
   clearMessage();
@@ -63,31 +62,22 @@ async function renderMovies() {
     gridEl.innerHTML = '';
 
     if (movies.length === 0) {
-      const noMoviesDiv = document.createElement('p');
-      noMoviesDiv.style.cssText = 'grid-column: 1/-1; text-align: center; color: #666; padding: 40px 20px;';
-      noMoviesDiv.textContent = 'No movies found.';
-      gridEl.appendChild(noMoviesDiv);
+      gridEl.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666; padding: 40px 20px;">No movies found.</p>';
     } else {
       movies.forEach((movie) => {
-        // Clone the template
-        const clone = template.content.cloneNode(true);
-        
-        // Set data using safe DOM methods (no innerHTML)
-        clone.querySelector('.movie-title').textContent = movie.Title || 'Unknown';
-        clone.querySelector('.year').textContent = movie.Year || 'N/A';
-        clone.querySelector('.description').textContent = movie.Description || 'No description available.';
-        
-        // Set button click handlers
-        const viewBtn = clone.querySelector('.btn-view');
-        const editBtn = clone.querySelector('.btn-edit');
-        const deleteBtn = clone.querySelector('.btn-delete');
-        
-        viewBtn.onclick = () => goToViewMovie(movie.Id);
-        editBtn.onclick = () => goToEditMovie(movie.Id);
-        deleteBtn.onclick = () => deleteMovie(movie.Id);
-        
-        // Append to grid
-        gridEl.appendChild(clone);
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.innerHTML = `
+          <h3>${escapeHtml(movie.Title || 'Unknown')}</h3>
+          <div class="year">${movie.Year || 'N/A'}</div>
+          <div class="description">${escapeHtml(movie.Description || 'No description available.')}</div>
+          <div class="card-buttons">
+            <button class="btn btn-secondary" onclick="goToViewMovie(${movie.Id})">View</button>
+            <button class="btn btn-primary" onclick="goToEditMovie(${movie.Id})">Edit</button>
+            <button class="btn btn-danger" onclick="deleteMovie(${movie.Id})">Remove</button>
+          </div>
+        `;
+        gridEl.appendChild(card);
       });
     }
 

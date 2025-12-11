@@ -3,13 +3,13 @@ using System.Net.Sockets;
 
 namespace Shared.Http;
 
-public class SimpleHttpContext : IHttpContext
+public class SimpleHttpContext : HttpContext
 {
-    public IHttpRequest Request { get; }
-    public IHttpResponse Response { get; }
+    public HttpRequest Request { get; }
+    public HttpResponse Response { get; }
     public Hashtable Properties { get; }
 
-    public SimpleHttpContext(IHttpRequest request, IHttpResponse response)
+    public SimpleHttpContext(HttpRequest request, HttpResponse response)
     {
         Request = request;
         Response = response;

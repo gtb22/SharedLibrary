@@ -23,9 +23,9 @@ C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.AssemblyInfoInputs.cache
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.AssemblyInfo.cs
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.csproj.CoreCompileInputs.cache
+C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.sourcelink.json
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.csproj.Up2Date
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\refint\Smdb.Core.dll
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.pdb
 C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\ref\Smdb.Core.dll
-C:\Users\graci\Documents\(CSR)SimpleMDB\src\Smdb.Core\obj\Debug\net8.0\Smdb.Core.sourcelink.json

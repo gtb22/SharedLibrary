@@ -14,11 +14,11 @@ public class MoviesController
         _service = service;
     }
 
-    public async Task GetAll(IHttpRequest req, IHttpResponse res, Hashtable props)
+    public async Task GetAll(HttpRequest req, HttpResponse res, Hashtable props)
     {
         var page = int.TryParse(req.QueryString?["page"], out var p) ? p : 1;
         
-        // Check pageSize first, then size, then default to 10
+        //Check pageSize first, then size, then default to 10
         int size = 10;
         if (req.QueryString != null)
         {
@@ -32,7 +32,7 @@ public class MoviesController
         await JsonUtils.SendPagedResultResponse(res, result);
     }
 
-    public async Task GetById(IHttpRequest req, IHttpResponse res, Hashtable props)
+    public async Task GetById(HttpRequest req, HttpResponse res, Hashtable props)
     {
         if (!int.TryParse(req.PathParams?["id"]?.ToString(), out var id))
         {
@@ -44,7 +44,7 @@ public class MoviesController
         await JsonUtils.SendResultResponse(res, result);
     }
 
-    public async Task Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+    public async Task Create(HttpRequest req, HttpResponse res, Hashtable props)
     {
         try
         {
@@ -107,7 +107,7 @@ public class MoviesController
         }
     }
 
-    public async Task Update(IHttpRequest req, IHttpResponse res, Hashtable props)
+    public async Task Update(HttpRequest req, HttpResponse res, Hashtable props)
     {
         if (!int.TryParse(req.PathParams?["id"]?.ToString(), out var id))
         {
@@ -141,7 +141,7 @@ public class MoviesController
         await JsonUtils.SendResultResponse(res, result);
     }
 
-    public async Task Delete(IHttpRequest req, IHttpResponse res, Hashtable props)
+    public async Task Delete(HttpRequest req, HttpResponse res, Hashtable props)
     {
         if (!int.TryParse(req.PathParams?["id"]?.ToString(), out var id))
         {
