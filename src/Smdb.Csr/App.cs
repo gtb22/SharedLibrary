@@ -8,15 +8,15 @@ namespace Smdb.Csr;
 public class App
 {
     private HttpServer? _server;
-    private HttpRouter? _router;
-    private static readonly HttpClient _httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
+    private HttpRouter? Router;
+    private static readonly HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
     private const string API_BASE_URL = "http://localhost:5000";
 
     public void ConfigureRoutes()
     {
-        _router = new HttpRouter();
+        Router = new HttpRouter();
 
-        _router.MapGet("/", async (req, res, props) =>
+        Router.MapGet("/", async (req, res, props) =>
         {
             res.StatusCode = 307;
             res.Headers["Location"] = "/index.html";
@@ -26,16 +26,16 @@ public class App
 
     public void ConfigureMiddleware()
     {
-        if (_router == null) throw new InvalidOperationException("Routes not configured");
+        if (Router == null) throw new InvalidOperationException("Routes not configured");
 
-        _router.Use(HttpUtils.StructuredLogging);
-        _router.Use(HttpUtils.CentralizedErrorHandling);
-        _router.Use(HttpUtils.AddResponseCorsHeaders);
-        _router.Use(HttpUtils.ParseRequestUrl);
-        _router.Use(HttpUtils.ParseRequestQueryString);
+        Router.Use(HttpUtils.StructuredLogging);
+        Router.Use(HttpUtils.CentralizedErrorHandling);
+        Router.Use(HttpUtils.AddResponseCorsHeaders);
+        Router.Use(HttpUtils.ParseRequestUrl);
+        Router.Use(HttpUtils.ParseRequestQueryString);
         
-        // Proxy API requests to the API server (reads body internally)
-        _router.Use(async (req, res, props, next) =>
+        //Proxy API requests to the API server (reads body internally)
+        Router.Use(async (req, res, props, next) =>
         {
             if (req.Path?.StartsWith("/api/") == true)
             {
@@ -45,8 +45,8 @@ public class App
             await next();
         });
         
-        _router.Use(HttpUtils.ServeStaticFiles);
-        _router.Use(HttpUtils.DefaultResponse);
+        Router.Use(HttpUtils.ServeStaticFiles);
+        Router.Use(HttpUtils.DefaultResponse);
     }
 
     private async Task ProxyToApiServer(IHttpRequest req, IHttpResponse res, Hashtable props)
@@ -73,7 +73,7 @@ public class App
                 targetUrl
             );
 
-            // Copy body for POST/PUT/PATCH from the raw request body
+            //Copy body for POST/PUT/PATCH from the raw request body
             if (req.Method == "POST" || req.Method == "PUT" || req.Method == "PATCH")
             {
                 if (req.Body != null && req.Body.Length > 0)
@@ -88,12 +88,12 @@ public class App
                 }
             }
 
-            var response = await _httpClient.SendAsync(request);
+            var response = await HttpClient.SendAsync(request);
             var content = await response.Content.ReadAsStringAsync();
 
             Console.WriteLine($"[Proxy] <- {(int)response.StatusCode}");
 
-            // Set response
+            //Set response
             res.StatusCode = (int)response.StatusCode;
             res.Headers["Content-Type"] = response.Content.Headers.ContentType?.ToString() ?? "application/json";
             await res.WriteAsync(content);
@@ -120,7 +120,7 @@ public class App
         ConfigureRoutes();
         ConfigureMiddleware();
 
-        _server = new HttpServer(_router ?? throw new InvalidOperationException("Router not configured"));
+        _server = new HttpServer(Router ?? throw new InvalidOperationException("Router not configured"));
         await _server.StartAsync(host, port);
     }
 }
