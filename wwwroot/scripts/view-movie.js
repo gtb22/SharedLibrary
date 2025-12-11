@@ -1,6 +1,6 @@
 const API_BASE = '/api/v1';
 
-// Show message banner
+//Show message banner
 function showMessage(text, type) {
   const container = document.getElementById('message-container');
   const div = document.createElement('div');
@@ -10,13 +10,13 @@ function showMessage(text, type) {
   container.appendChild(div);
 }
 
-// Get query parameter
+//Get query parameter
 function getQueryParam(name) {
   const params = new URLSearchParams(window.location.search);
   return params.get(name);
 }
 
-// Load movie data
+//Load movie data
 async function loadMovie() {
   const movieId = getQueryParam('id');
 
@@ -39,14 +39,14 @@ async function loadMovie() {
     document.getElementById('movie-year').textContent = movie.Year || 'N/A';
     document.getElementById('movie-description').textContent = movie.Description || 'No description available.';
 
-    // Show success message
+    //Show success message
     showMessage('Movie loaded successfully.', 'success');
   } catch (error) {
     showMessage(`Error: ${error.message}`, 'error');
   }
 }
 
-// Edit button handler
+//Edit button handler
 window.editMovie = function() {
   const movieId = getQueryParam('id');
   if (movieId) {
@@ -54,17 +54,17 @@ window.editMovie = function() {
   }
 };
 
-// Home button handler
+//Home button handler
 window.goHome = function() {
   window.location.href = '/index.html';
 };
 
-// All Movies button handler
+//All Movies button handler
 window.goToMovies = function() {
   window.location.href = '/movies.html';
 };
 
-// Initialize on page load
+//Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   loadMovie();
 });

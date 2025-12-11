@@ -1,5 +1,5 @@
-// movies.js - Movies list with pagination, items-per-page, and CRUD operations
-// All functions exposed globally for onclick handlers
+//movies.js - Movies list with pagination, items-per-page, and CRUD operations
+//All functions exposed globally for onclick handlers
 
 const API_BASE = '/api/v1';
 

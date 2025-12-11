@@ -1,7 +1,7 @@
-// index.js - Home page module
+//index.js - Home page module
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Fetch and display movie count
+  //Fetch and display movie count
   const movieCountEl = document.getElementById('movieCount');
   
   try {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('Total movie count:', totalCount);
         
         if (totalCount > 0) {
-          // Animate the count
+          //Animate the count
           animateCount(movieCountEl, 0, totalCount, 1500);
         } else {
           movieCountEl.textContent = '0';
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Animate counting from start to end
+//Animate counting from start to end
 function animateCount(element, start, end, duration) {
   const startTime = performance.now();
   
@@ -40,7 +40,7 @@ function animateCount(element, start, end, duration) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     
-    // Easing function for smooth animation
+    //Easing function for smooth animation
     const easeOutQuad = progress * (2 - progress);
     const current = Math.floor(start + (end - start) * easeOutQuad);
     

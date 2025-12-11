@@ -1,7 +1,7 @@
-// API base URL - direct to API server (CORS enabled)
+//API base URL - direct to API server (CORS enabled)
 const API_BASE = 'http://localhost:5000/api/v1';
 
-// Show message banner
+//Show message banner
 function showMessage(text, type) {
   const container = document.getElementById('message-container');
   const div = document.createElement('div');
@@ -11,7 +11,7 @@ function showMessage(text, type) {
   container.appendChild(div);
 }
 
-// Handle form submission
+//Handle form submission
 async function handleSubmit(e) {
   e.preventDefault();
   console.log('Form submitted');
@@ -54,7 +54,7 @@ async function handleSubmit(e) {
 
     console.log('Response received:', response.status, response.statusText);
     
-    // Always try to parse as text first to see what we got
+    //Always try to parse as text first to see what we got
     const responseText = await response.text();
     console.log('Response text:', responseText);
     
@@ -82,7 +82,7 @@ async function handleSubmit(e) {
     }
   } catch (error) {
     console.error('Caught error:', error);
-    // Distinguish network errors to guide the user
+    //Distinguish network errors to guide the user
     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
       showMessage('Cannot reach API at port 5000. Please ensure the API server is running.', 'error');
     } else {
@@ -91,12 +91,12 @@ async function handleSubmit(e) {
   }
 }
 
-// Cancel button handler
+//Cancel button handler
 function goBack() {
   window.location.href = '/movies.html';
 }
 
-// Initialize on page load
+//Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Page loaded, initializing form...');
   const form = document.getElementById('movie-form');

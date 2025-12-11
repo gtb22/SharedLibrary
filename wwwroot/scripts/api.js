@@ -1,4 +1,4 @@
-// api.js - API client and UI helpers
+//api.js - API client and UI helpers
 const API_BASE = '/api/v1';
 
 export const ApiClient = {
