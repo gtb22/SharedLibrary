@@ -1,8 +1,1242 @@
-2025-12-09T20:59:24.9221031-04:00
-System.NotSupportedException: This stream does not support seek operations.
-   at System.Net.Sockets.NetworkStream.get_Position()
-   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 123
-   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 118
+2025-12-10T16:30:32.3723307-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 159
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Callback.Invoke(Event e)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:35:47.1142679-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 99
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 136
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 99
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:47:56.2868736-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 140
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:53:36.9744048-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 99
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 140
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Update(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 99
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:54:10.7172576-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 140
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:54:10.7202637-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 140
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T16:54:10.7231756-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 140
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T17:33:01.9445243-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 175
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Callback.Invoke(Event e)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 33
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 23
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 84
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T17:51:38.3656887-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 106
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 183
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Callback.Invoke(Event e)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 106
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+
+2025-12-10T17:52:09.9493153-04:00
+System.IO.IOException: Unable to write data to the transport connection: An established connection was aborted by the software in your host machine..
+ ---> System.Net.Sockets.SocketException (10053): An established connection was aborted by the software in your host machine.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.SendAsyncForNetworkStream(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.SendAsyncForNetworkStream(ReadOnlyMemory`1 buffer, SocketFlags socketFlags, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at System.IO.Stream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 106
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<HandleContextAsync>b__0()
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 60
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.ParseRequestUrl(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 55
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.AddResponseCorsHeaders(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 27
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.CentralizedErrorHandling(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 17
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpUtils.StructuredLogging(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next)
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_2.<HandleContextAsync>b__1() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 62
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context)
+   at Shared.Http.HttpServer.HandleClientAsync(TcpClient client) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpServer.cs:line 183
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(IAsyncStateMachineBox box, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.ValueTask`1.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__173_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Callback.Invoke(Event e)
+   at System.Threading.ThreadPoolTypedWorkItemQueue`2.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+--- End of stack trace from previous location ---
+
+   --- End of inner exception stack trace ---
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(Byte[] content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 44
+   at Shared.Http.SimpleHttpListenerResponse.WriteAsync(String content) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\SimpleHttpListenerResponse.cs:line 25
+   at Shared.Http.Results.JsonUtils.Json(IHttpResponse res, Object obj, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 13
+   at Shared.Http.Results.JsonUtils.SendError(IHttpResponse res, String message, Int32 statusCode) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\Results\JsonUtils.cs:line 30
+   at Smdb.Api.Controllers.MoviesController.Create(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Api\Controllers\MoviesController.cs:line 106
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 124
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpRouter.HandleContextAsync(IHttpContext context) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 65
+   at Shared.Http.HttpRouter.RouteAsync(IHttpRequest req, IHttpResponse res, Hashtable props) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 103
+   at Shared.Http.HttpRouter.<>c__DisplayClass14_0.<<HandleContextAsync>b__0>d.MoveNext() in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpRouter.cs:line 56
+--- End of stack trace from previous location ---
+   at Shared.Http.HttpUtils.DefaultResponse(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 171
+   at Shared.Http.HttpUtils.ServeStaticFiles(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 166
    at Shared.Http.HttpUtils.ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 100
    at Shared.Http.HttpUtils.ReadRequestBodyAsText(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 81
    at Shared.Http.HttpUtils.ParseRequestQueryString(IHttpRequest req, IHttpResponse res, Hashtable props, Func`1 next) in C:\Users\andre\Downloads\SIMPLEMDB1\SharedLibrary\src\Shared\Http\HttpUtils.cs:line 71

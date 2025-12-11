@@ -1,44 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Add Movie - Simple Movie Database</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        :root{--dark:#2b2b2b;--muted:#777;--accent:#28a745;--bg:#f5f6f7}
+        body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#222}
+        .page{max-width:1200px;margin:0 auto}
+        .header{background:var(--dark);color:#fff;padding:28px 32px}
+        .header h1{margin:0;font-size:36px;font-weight:700}
+        .subcontrols{display:flex;gap:12px;padding:18px 32px;background:transparent}
+        .pill{background:#eee;border:1px solid #ddd;padding:10px 14px;border-radius:6px;box-shadow:0 6px 14px rgba(15,23,42,0.06);cursor:pointer;color:#222;text-decoration:none}
+        .container{background:#fff;padding:28px;border-top:1px solid #e6e6e6}
+        .alert-success{background:#e9f7ef;border-left:6px solid var(--accent);color:#155724;padding:18px;border-radius:6px;margin-bottom:22px}
+        .alert-error{background:#fff4f4;border-left:6px solid #d9534f;color:#7a1f1f;padding:18px;border-radius:6px;margin-bottom:22px}
+        .form-row{display:grid;grid-template-columns:1fr 260px 360px;gap:18px;align-items:start}
+        label{display:block;font-size:14px;color:#222;margin-bottom:6px}
+        input[type=text], input[type=number], textarea{width:100%;padding:10px 12px;border:1px solid #d7d7d7;border-radius:6px;background:#fff;font-size:15px}
+        textarea{min-height:120px;resize:vertical}
+        .actions{margin-top:22px}
+        .btn-primary{background:#007bff;color:#fff;padding:10px 18px;border-radius:6px;border:none;box-shadow:0 6px 14px rgba(0,123,255,0.18);cursor:pointer}
+        .btn-cancel{background:#e9e9e9;color:#222;padding:10px 14px;border-radius:6px;border:none;margin-left:10px;cursor:pointer}
+        @media (max-width:900px){ .form-row{grid-template-columns:1fr;} }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Add Movie</h1>
-        <div class="header-buttons">
-            <a href="/index.html" class="btn btn-secondary">Home</a>
-            <a href="/movies.html" class="btn btn-secondary">All Movies</a>
+    <div class="page">
+        <header class="header">
+            <h1 id="page-title">Add Movie</h1>
+        </header>
+
+        <div class="subcontrols">
+            <div style="padding:0 32px 0 32px;">
+                <a href="/index.html" class="pill">Home</a>
+                <a href="/movies.html" class="pill" style="margin-left:8px">All Movies</a>
+            </div>
         </div>
-    </header>
 
-    <div class="container">
-        <div id="message-container"></div>
+        <main class="container">
+            <div id="status-success" class="alert-success" style="display:none">New movie. You can edit and save.</div>
+            <div id="status-error" class="alert-error" style="display:none"></div>
+            <div id="message-container"></div>
 
-        <form id="movie-form">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" required>
-            </div>
+            <form id="movie-form">
+                <div class="form-row">
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title" type="text" name="title" required />
+                    </div>
 
-            <div class="form-group">
-                <label for="year">Year</label>
-                <input type="number" id="year" name="year" required>
-            </div>
+                    <div>
+                        <label for="year">Year</label>
+                        <input id="year" type="number" name="year" min="1888" max="2100" required />
+                    </div>
 
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description"></textarea>
-            </div>
+                    <div>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Short synopsis..."></textarea>
+                    </div>
+                </div>
 
-            <div class="form-buttons">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
-            </div>
-        </form>
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Create</button>
+                    <button type="button" id="cancel-btn" class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </main>
     </div>
 
     <script src="/add-movie.js"></script>

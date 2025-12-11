@@ -1,11 +1,11 @@
-C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.exe
-C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.dll
-C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Shared.dll
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.staticwebassets.runtime.json
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.staticwebassets.endpoints.json
+C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.exe
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.deps.json
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.runtimeconfig.json
+C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.dll
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Csr.pdb
+C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Shared.dll
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Core.dll
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Smdb.Core.pdb
 C:\Users\andre\Downloads\SIMPLEMDB1\src\Smdb.Csr\bin\Debug\net8.0\Shared.pdb

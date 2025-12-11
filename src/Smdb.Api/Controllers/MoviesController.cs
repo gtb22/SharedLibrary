@@ -17,7 +17,16 @@ public class MoviesController
     public async Task GetAll(IHttpRequest req, IHttpResponse res, Hashtable props)
     {
         var page = int.TryParse(req.QueryString?["page"], out var p) ? p : 1;
-        var size = int.TryParse(req.QueryString?["size"], out var s) ? s : 5;
+        
+        // Check pageSize first, then size, then default to 10
+        int size = 10;
+        if (req.QueryString != null)
+        {
+            if (req.QueryString.ContainsKey("pageSize") && int.TryParse(req.QueryString["pageSize"], out var ps))
+                size = ps;
+            else if (req.QueryString.ContainsKey("size") && int.TryParse(req.QueryString["size"], out var s))
+                size = s;
+        }
 
         var result = await _service.GetAllAsync(page, size);
         await JsonUtils.SendPagedResultResponse(res, result);
@@ -37,24 +46,65 @@ public class MoviesController
 
     public async Task Create(IHttpRequest req, IHttpResponse res, Hashtable props)
     {
-        var body = props["jsonBody"] as System.Text.Json.JsonElement?;
-        if (body == null)
+        try
         {
-            await JsonUtils.SendError(res, "Invalid request body", 400);
-            return;
+            Console.WriteLine("[Controller.Create] Starting");
+            Console.Out.Flush();
+            
+            if (!props.ContainsKey("jsonBody"))
+            {
+                Console.WriteLine("[Controller.Create] No jsonBody in props");
+                Console.Out.Flush();
+                await JsonUtils.SendError(res, "Invalid request body", 400);
+                return;
+            }
+
+            var body = props["jsonBody"] as System.Text.Json.JsonElement?;
+            if (body == null)
+            {
+                Console.WriteLine("[Controller.Create] jsonBody is null");
+                Console.Out.Flush();
+                await JsonUtils.SendError(res, "Invalid request body", 400);
+                return;
+            }
+
+            Console.WriteLine("[Controller.Create] Building movie object");
+            Console.Out.Flush();
+            
+            var movie = new Movie
+            {
+                Title = (body.Value.TryGetProperty("Title", out var t) ? t.GetString() : 
+                        body.Value.TryGetProperty("title", out var tl) ? tl.GetString() : null) ?? "",
+                Year = (body.Value.TryGetProperty("Year", out var y) ? y.GetInt32() : 
+                       body.Value.TryGetProperty("year", out var yl) ? yl.GetInt32() : 0),
+                Description = (body.Value.TryGetProperty("Description", out var d) ? d.GetString() : 
+                              body.Value.TryGetProperty("description", out var dl) ? dl.GetString() : null) ?? "",
+                Genre = (body.Value.TryGetProperty("Genre", out var g) ? g.GetString() : 
+                        body.Value.TryGetProperty("genre", out var gl) ? gl.GetString() : null) ?? "",
+                Rating = (body.Value.TryGetProperty("Rating", out var r) ? r.GetDouble() : 
+                         body.Value.TryGetProperty("rating", out var rl) ? rl.GetDouble() : 0)
+            };
+
+            Console.WriteLine($"[Controller.Create] Calling service.CreateAsync for '{movie.Title}'");
+            Console.Out.Flush();
+            
+            var result = await _service.CreateAsync(movie);
+            
+            Console.WriteLine($"[Controller.Create] Service returned, sending response");
+            Console.Out.Flush();
+            
+            await JsonUtils.SendResultResponse(res, result, result.Success ? 201 : 400);
+            
+            Console.WriteLine($"[Controller.Create] Response sent successfully");
+            Console.Out.Flush();
         }
-
-        var movie = new Movie
+        catch (Exception ex)
         {
-            Title = body.Value.GetProperty("title").GetString() ?? "",
-            Year = body.Value.GetProperty("year").GetInt32(),
-            Description = body.Value.GetProperty("description").GetString() ?? "",
-            Genre = body.Value.TryGetProperty("genre", out var g) ? g.GetString() ?? "" : "",
-            Rating = body.Value.TryGetProperty("rating", out var r) ? r.GetDouble() : 0
-        };
-
-        var result = await _service.CreateAsync(movie);
-        await JsonUtils.SendResultResponse(res, result, result.Success ? 201 : 400);
+            Console.WriteLine($"[Controller.Create] Exception: {ex.GetType().Name}: {ex.Message}");
+            Console.WriteLine($"[Controller.Create] Stack: {ex.StackTrace}");
+            Console.Out.Flush();
+            await JsonUtils.SendError(res, $"Error creating movie: {ex.Message}", 500);
+        }
     }
 
     public async Task Update(IHttpRequest req, IHttpResponse res, Hashtable props)
@@ -75,11 +125,16 @@ public class MoviesController
         var movie = new Movie
         {
             Id = id,
-            Title = body.Value.GetProperty("title").GetString() ?? "",
-            Year = body.Value.GetProperty("year").GetInt32(),
-            Description = body.Value.GetProperty("description").GetString() ?? "",
-            Genre = body.Value.TryGetProperty("genre", out var g) ? g.GetString() ?? "" : "",
-            Rating = body.Value.TryGetProperty("rating", out var r) ? r.GetDouble() : 0
+            Title = (body.Value.TryGetProperty("Title", out var t) ? t.GetString() : 
+                    body.Value.TryGetProperty("title", out var tl) ? tl.GetString() : null) ?? "",
+            Year = (body.Value.TryGetProperty("Year", out var y) ? y.GetInt32() : 
+                   body.Value.TryGetProperty("year", out var yl) ? yl.GetInt32() : 0),
+            Description = (body.Value.TryGetProperty("Description", out var d) ? d.GetString() : 
+                          body.Value.TryGetProperty("description", out var dl) ? dl.GetString() : null) ?? "",
+            Genre = (body.Value.TryGetProperty("Genre", out var g) ? g.GetString() : 
+                    body.Value.TryGetProperty("genre", out var gl) ? gl.GetString() : null) ?? "",
+            Rating = (body.Value.TryGetProperty("Rating", out var r) ? r.GetDouble() : 
+                     body.Value.TryGetProperty("rating", out var rl) ? rl.GetDouble() : 0)
         };
 
         var result = await _service.UpdateAsync(movie);

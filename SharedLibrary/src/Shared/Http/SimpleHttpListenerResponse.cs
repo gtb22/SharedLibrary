@@ -20,18 +20,35 @@ public class SimpleHttpListenerResponse : IHttpResponse
 
     public async Task WriteAsync(string content)
     {
+        Console.WriteLine($"[Response.WriteAsync] Writing string, length={content?.Length ?? 0}");
+        Console.Out.Flush();
         await WriteAsync(Encoding.UTF8.GetBytes(content));
     }
 
     public async Task WriteAsync(byte[] content)
     {
+        Console.WriteLine($"[Response.WriteAsync] Writing {content.Length} bytes, headers sent={_headersSent}");
+        Console.Out.Flush();
+        
         if (!_headersSent)
         {
+            Console.WriteLine($"[Response.WriteAsync] Sending headers");
+            Console.Out.Flush();
             await SendHeadersAsync(content.Length);
+            Console.WriteLine($"[Response.WriteAsync] Headers sent");
+            Console.Out.Flush();
         }
 
+        Console.WriteLine($"[Response.WriteAsync] Writing body to stream");
+        Console.Out.Flush();
         await _stream.WriteAsync(content, 0, content.Length);
+        
+        Console.WriteLine($"[Response.WriteAsync] Flushing stream");
+        Console.Out.Flush();
         await _stream.FlushAsync();
+        
+        Console.WriteLine($"[Response.WriteAsync] Complete");
+        Console.Out.Flush();
     }
 
     private async Task SendHeadersAsync(int contentLength = 0)

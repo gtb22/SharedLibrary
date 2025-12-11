@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api/v1';
+const API_BASE = '/api/v1';
 
 // Show message banner
 function showMessage(text, type) {
@@ -47,22 +47,22 @@ async function loadMovie() {
 }
 
 // Edit button handler
-function editMovie() {
+window.editMovie = function() {
   const movieId = getQueryParam('id');
   if (movieId) {
     window.location.href = `/edit-movie.html?id=${movieId}`;
   }
-}
+};
 
 // Home button handler
-function goHome() {
+window.goHome = function() {
   window.location.href = '/index.html';
-}
+};
 
 // All Movies button handler
-function goToMovies() {
+window.goToMovies = function() {
   window.location.href = '/movies.html';
-}
+};
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {

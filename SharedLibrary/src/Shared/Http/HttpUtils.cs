@@ -83,17 +83,28 @@ public static class HttpUtils
 
     public static async Task ReadRequestBodyAsJson(IHttpRequest req, IHttpResponse res, Hashtable props, Func<Task> next)
     {
+        Console.WriteLine($"[Middleware.ReadJson] Body={req.Body?.Length ?? 0} bytes, IsJson={IsJsonContent(req)}");
+        Console.Out.Flush();
+        
         if (req.Body != null && req.Body.Length > 0 && IsJsonContent(req))
         {
             try
             {
                 var bodyText = Encoding.UTF8.GetString(req.Body);
+                Console.WriteLine($"[Middleware.ReadJson] Body text: {bodyText}");
+                Console.Out.Flush();
+                
                 var jsonElement = JsonSerializer.Deserialize<JsonElement>(bodyText);
                 props["jsonBody"] = jsonElement;
+                
+                Console.WriteLine($"[Middleware.ReadJson] JSON parsed successfully");
+                Console.Out.Flush();
             }
             catch (Exception ex)
             {
                 props["jsonParseError"] = ex.Message;
+                Console.WriteLine($"[Middleware.ReadJson] Parse error: {ex.Message}");
+                Console.Out.Flush();
             }
         }
 

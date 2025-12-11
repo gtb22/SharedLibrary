@@ -80,10 +80,21 @@ public class HttpRouter
             {
                 var subPath = path == prefix ? "/" : path[prefix.Length..];
                 req.PathParams ??= new();
-                var subContext = new SimpleHttpContext(
-                    new SimpleHttpListenerRequest(method, subPath, req.Headers ?? new(), req.Body),
-                    res
-                );
+                
+                // Create subrequest and preserve RawPath including query string
+                var subRawPath = subPath;
+                if (req.RawPath.Contains('?'))
+                {
+                    var queryPart = req.RawPath[req.RawPath.IndexOf('?')..];
+                    subRawPath += queryPart;
+                }
+                
+                var subRequest = new SimpleHttpListenerRequest(method, subRawPath, req.Headers ?? new(), req.Body);
+                // Preserve query string and path params from original request
+                subRequest.QueryString = req.QueryString;
+                subRequest.PathParams = req.PathParams;
+                
+                var subContext = new SimpleHttpContext(subRequest, res);
                 // copy properties into subcontext
                 foreach (System.Collections.DictionaryEntry de in props)
                 {

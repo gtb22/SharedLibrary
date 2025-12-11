@@ -1,6 +1,5 @@
 using Smdb.Core.Db;
 using Smdb.Core.Movies;
-using Smdb.Core.Actors;
 using Smdb.Core.Users;
 using Shared.Http;
 using Shared.Http.Results;
@@ -26,25 +25,20 @@ public class App
 
         // Create repositories
         var movieRepo = new MemoryMovieRepository();
-        var actorRepo = new MemoryActorRepository();
         var userRepo = new MemoryUserRepository();
 
         // Create services
         var movieService = new MovieService(movieRepo);
-        var actorService = new ActorService(actorRepo);
 
         // Create controllers
         var moviesController = new MoviesController(movieService);
-        var actorsController = new ActorsController(actorService);
 
         // Create routers
         var moviesRouter = new MoviesRouter(moviesController);
-        var actorsRouter = new ActorsRouter(actorsController);
 
         // Configure API routes
         var apiRouter = new HttpRouter();
         apiRouter.UseRouter("/movies", moviesRouter);
-        apiRouter.UseRouter("/actors", actorsRouter);
 
         _router.UseRouter("/api/v1", apiRouter);
 

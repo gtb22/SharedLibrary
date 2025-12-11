@@ -1,4 +1,4 @@
-export const API_BASE = 'http://localhost:5000/api/v1';
+export const API_BASE = '/api/v1';
 
 export async function fetchJson(url, options = {}) {
     const response = await fetch(url, {

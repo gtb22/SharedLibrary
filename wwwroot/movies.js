@@ -1,12 +1,19 @@
-const API_BASE = 'http://localhost:5000/api/v1';
+// movies.js - Movies list with pagination, items-per-page, and CRUD operations
+// All functions exposed globally for onclick handlers
+
+const API_BASE = '/api/v1';
 
 let currentPage = 1;
 let currentPageSize = 10;
-let totalMovies = 0;
+let totalPages = 1;
+let totalItems = 0;
 
-// Helper: Show message banner
+/**
+ * Show a message banner (success or error)
+ */
 function showMessage(text, type) {
   const container = document.getElementById('message-container');
+  if (!container) return;
   const div = document.createElement('div');
   div.className = `message ${type}`;
   div.textContent = text;
@@ -14,134 +21,218 @@ function showMessage(text, type) {
   container.appendChild(div);
 }
 
-// Helper: Clear message
+/**
+ * Clear the message banner
+ */
 function clearMessage() {
-  document.getElementById('message-container').innerHTML = '';
+  const container = document.getElementById('message-container');
+  if (container) container.innerHTML = '';
 }
 
-// Fetch and render movies
+/**
+ * Fetch movies from the API and render the page
+ */
 async function renderMovies() {
-  document.getElementById('loading').style.display = 'block';
+  const loadingEl = document.getElementById('loading');
+  const gridEl = document.getElementById('movies-grid');
+  
+  if (loadingEl) loadingEl.style.display = 'block';
   clearMessage();
 
   try {
-    const response = await fetch(
-      `${API_BASE}/movies?page=${currentPage}&pageSize=${currentPageSize}`
-    );
-    const data = await response.json();
-
-    if (!response.ok || !data.Success) {
-      throw new Error(data.Message || 'Failed to load movies');
+    const url = `${API_BASE}/movies?page=${currentPage}&pageSize=${currentPageSize}`;
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
+    
+    const data = await response.json();
+    const movies = data.Data || data.items || [];
+    totalItems = data.Total || data.totalItems || 0;
+    const page = data.Page || data.page || currentPage;
+    const pageSize = data.Size || data.pageSize || currentPageSize;
+    const hasNext = data.HasNextPage !== undefined ? data.HasNextPage : (page * pageSize < totalItems);
+    const hasPrev = data.HasPreviousPage !== undefined ? data.HasPreviousPage : (page > 1);
 
-    totalMovies = data.Total;
-    const movies = data.Data || [];
+    totalPages = Math.ceil(totalItems / currentPageSize);
+    if (totalPages < 1) totalPages = 1;
 
-    // Render movie cards
-    const grid = document.getElementById('movies-grid');
-    grid.innerHTML = '';
+    if (!gridEl) throw new Error('movies-grid element not found');
+    gridEl.innerHTML = '';
 
     if (movies.length === 0) {
-      grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666; padding: 20px;">No movies found.</p>';
+      gridEl.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666; padding: 40px 20px;">No movies found.</p>';
     } else {
       movies.forEach((movie) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
         card.innerHTML = `
-          <h3>${movie.Title || 'Unknown'}</h3>
+          <h3>${escapeHtml(movie.Title || 'Unknown')}</h3>
           <div class="year">${movie.Year || 'N/A'}</div>
-          <div class="description">${movie.Description || 'No description available.'}</div>
+          <div class="description">${escapeHtml(movie.Description || 'No description available.')}</div>
           <div class="card-buttons">
-            <button class="btn btn-secondary" onclick="window.location.href='/view-movie.html?id=${movie.Id}'">View</button>
-            <button class="btn btn-primary" onclick="window.location.href='/edit-movie.html?id=${movie.Id}'">Edit</button>
+            <button class="btn btn-secondary" onclick="goToViewMovie(${movie.Id})">View</button>
+            <button class="btn btn-primary" onclick="goToEditMovie(${movie.Id})">Edit</button>
             <button class="btn btn-danger" onclick="deleteMovie(${movie.Id})">Remove</button>
           </div>
         `;
-        grid.appendChild(card);
+        gridEl.appendChild(card);
       });
     }
 
-    // Update pagination bar
-    const bar = document.getElementById('pagination-bar');
-    const hasNextPage = data.HasNextPage || false;
-    const hasPreviousPage = data.HasPreviousPage || false;
+    updatePaginationBar(hasPrev, hasNext);
 
-    bar.innerHTML = `
-      <div class="pagination-controls">
-        <span class="page-info">Page ${currentPage}</span>
-        <button class="btn btn-secondary" onclick="goToFirstPage()" ${!hasPreviousPage ? 'disabled' : ''}>First</button>
-        <button class="btn btn-secondary" onclick="goToPreviousPage()" ${!hasPreviousPage ? 'disabled' : ''}>Prev</button>
-        <button class="btn btn-secondary" onclick="goToNextPage()" ${!hasNextPage ? 'disabled' : ''}>Next</button>
-        <button class="btn btn-secondary" onclick="goToLastPage()" ${!hasNextPage ? 'disabled' : ''}>Last</button>
-      </div>
-      <div class="items-per-page">
-        <label>Items per page:</label>
-        <select onchange="changePageSize(parseInt(this.value))">
-          <option value="5" ${currentPageSize === 5 ? 'selected' : ''}>5</option>
-          <option value="10" ${currentPageSize === 10 ? 'selected' : ''}>10</option>
-          <option value="15" ${currentPageSize === 15 ? 'selected' : ''}>15</option>
-          <option value="20" ${currentPageSize === 20 ? 'selected' : ''}>20</option>
-        </select>
-      </div>
-    `;
   } catch (error) {
-    showMessage(`Error: ${error.message}`, 'error');
+    console.error('Error loading movies:', error);
+    showMessage(`Error loading movies: ${error.message}`, 'error');
+    if (gridEl) gridEl.innerHTML = '';
   } finally {
-    document.getElementById('loading').style.display = 'none';
+    if (loadingEl) loadingEl.style.display = 'none';
   }
 }
 
-// Pagination handlers (exposed globally for inline onclick)
-window.goToFirstPage = () => {
-  currentPage = 1;
-  renderMovies();
+/**
+ * Update the pagination bar with First, Prev, Next, Last buttons and items-per-page dropdown
+ */
+function updatePaginationBar(hasPrev, hasNext) {
+  const barEl = document.getElementById('pagination-bar');
+  if (!barEl) return;
+
+  const isFirstPage = (currentPage === 1);
+  const isLastPage = (currentPage >= totalPages);
+
+  barEl.innerHTML = `
+    <div class="pagination-controls">
+      <span class="page-info">Page ${currentPage} of ${totalPages}</span>
+      <button class="btn btn-secondary" onclick="goToFirstPage()" ${isFirstPage ? 'disabled' : ''}>First</button>
+      <button class="btn btn-secondary" onclick="goToPreviousPage()" ${isFirstPage ? 'disabled' : ''}>Prev</button>
+      <button class="btn btn-secondary" onclick="goToNextPage()" ${isLastPage ? 'disabled' : ''}>Next</button>
+      <button class="btn btn-secondary" onclick="goToLastPage()" ${isLastPage ? 'disabled' : ''}>Last</button>
+    </div>
+    <div class="items-per-page">
+      <label for="page-size">Items per page:</label>
+      <select id="page-size" onchange="changePageSize(parseInt(this.value))">
+        <option value="5" ${currentPageSize === 5 ? 'selected' : ''}>5</option>
+        <option value="10" ${currentPageSize === 10 ? 'selected' : ''}>10</option>
+        <option value="15" ${currentPageSize === 15 ? 'selected' : ''}>15</option>
+        <option value="20" ${currentPageSize === 20 ? 'selected' : ''}>20</option>
+      </select>
+    </div>
+  `;
+}
+
+/**
+ * Go to the first page
+ */
+window.goToFirstPage = function() {
+  if (currentPage !== 1) {
+    currentPage = 1;
+    renderMovies();
+  }
 };
 
-window.goToPreviousPage = () => {
+/**
+ * Go to the previous page
+ */
+window.goToPreviousPage = function() {
   if (currentPage > 1) {
     currentPage--;
     renderMovies();
   }
 };
 
-window.goToNextPage = () => {
-  currentPage++;
-  renderMovies();
+/**
+ * Go to the next page
+ */
+window.goToNextPage = function() {
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderMovies();
+  }
 };
 
-window.goToLastPage = () => {
-  const estimatedLast = Math.ceil(totalMovies / currentPageSize);
-  currentPage = estimatedLast || currentPage + 1;
-  renderMovies();
+/**
+ * Go to the last page
+ */
+window.goToLastPage = function() {
+  if (currentPage !== totalPages) {
+    currentPage = totalPages;
+    renderMovies();
+  }
 };
 
-window.changePageSize = (size) => {
+/**
+ * Change the page size and reset to page 1
+ */
+window.changePageSize = function(size) {
   currentPageSize = size;
   currentPage = 1;
   renderMovies();
 };
 
-window.deleteMovie = (id) => {
+/**
+ * Delete a movie with confirmation
+ */
+window.deleteMovie = function(id) {
   if (!confirm('Are you sure you want to delete this movie?')) {
     return;
   }
 
+  const loadingEl = document.getElementById('loading');
+  if (loadingEl) loadingEl.style.display = 'block';
+
   fetch(`${API_BASE}/movies/${id}`, { method: 'DELETE' })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
     .then((data) => {
       if (data.Success) {
-        showMessage('Movie removed successfully.', 'success');
-        setTimeout(() => renderMovies(), 500);
+        showMessage('Movie deleted successfully.', 'success');
+        setTimeout(() => {
+          renderMovies();
+        }, 500);
       } else {
         showMessage(`Error: ${data.Message || 'Failed to delete movie'}`, 'error');
       }
     })
     .catch((error) => {
-      showMessage(`Error: ${error.message}`, 'error');
+      console.error('Delete error:', error);
+      showMessage(`Error deleting movie: ${error.message}`, 'error');
+    })
+    .finally(() => {
+      if (loadingEl) loadingEl.style.display = 'none';
     });
 };
 
-// Initialize on page load
+/**
+ * Navigate to view a movie
+ */
+window.goToViewMovie = function(id) {
+  window.location.href = `/view-movie.html?id=${id}`;
+};
+
+/**
+ * Navigate to edit a movie
+ */
+window.goToEditMovie = function(id) {
+  window.location.href = `/edit-movie.html?id=${id}`;
+};
+
+/**
+ * Simple HTML escape to prevent XSS
+ */
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+/**
+ * Initialize the page on load
+ */
 document.addEventListener('DOMContentLoaded', () => {
   renderMovies();
 });

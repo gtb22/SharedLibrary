@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HmVFWsCkF/M=",
+  "dgSpecHash": "uIhwwxPtUjU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\andre\\Downloads\\SIMPLEMDB1\\SharedLibrary\\src\\Shared\\Shared.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\graci\\Documents\\(CSR)SimpleMDB\\SharedLibrary\\src\\Shared\\Shared.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -8,14 +8,88 @@
 </head>
 <body>
     <header>
-        <h1>Simple Movie Database</h1>
+        <h1>🎬 Simple Movie Database</h1>
     </header>
 
     <div class="container">
-        <div class="home-content">
-            <h2>Welcome</h2>
-            <p>Explore our collection of movies. Click below to get started.</p>
-            <a href="/movies.html" class="btn btn-primary" onclick="window.location.href='/movies.html'; return false;">Browse Movies</a>
+        <div class="hero-section">
+            <h2 class="hero-title">Discover Your Next Favorite Movie</h2>
+            <p class="hero-subtitle">Your personal collection of cinema's finest moments</p>
+            <a href="/movies.html" class="btn btn-primary btn-large">Browse Movies</a>
+        </div>
+
+        <div class="movie-showcase">
+            <h2 class="section-title">Featured in Our Collection</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <div class="movie-poster">
+                        <div class="poster-placeholder">
+                            <span class="poster-icon">🎬</span>
+                            <span class="poster-text">Action</span>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h4>Action & Adventure</h4>
+                        <p>Thrilling blockbusters</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="movie-poster">
+                        <div class="poster-placeholder drama">
+                            <span class="poster-icon">🎭</span>
+                            <span class="poster-text">Drama</span>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h4>Drama & Romance</h4>
+                        <p>Emotional masterpieces</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="movie-poster">
+                        <div class="poster-placeholder comedy">
+                            <span class="poster-icon">😂</span>
+                            <span class="poster-text">Comedy</span>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h4>Comedy & Fun</h4>
+                        <p>Laugh out loud moments</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <div class="movie-poster">
+                        <div class="poster-placeholder scifi">
+                            <span class="poster-icon">🚀</span>
+                            <span class="poster-text">Sci-Fi</span>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h4>Sci-Fi & Fantasy</h4>
+                        <p>Beyond imagination</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Possibilities</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Access</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start?</h2>
+            <p>Join thousands of movie enthusiasts and build your perfect collection</p>
+            <div class="cta-buttons">
+                <a href="/movies.html" class="btn btn-primary btn-large">View All Movies</a>
+                <a href="/add-movie.html" class="btn btn-secondary btn-large">Add New Movie</a>
+            </div>
         </div>
     </div>
 
