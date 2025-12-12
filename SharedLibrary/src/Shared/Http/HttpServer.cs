@@ -127,7 +127,7 @@ public class HttpServer
                     return;
 
                 var method = parts[0];
-                var path = parts[1];
+                var path = parts[1];  // "/api/v1/movies"
 
                 Console.WriteLine($"[HandleClient] {method} {path}");
 

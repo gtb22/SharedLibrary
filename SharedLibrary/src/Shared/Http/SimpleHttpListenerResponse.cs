@@ -6,7 +6,8 @@ namespace Shared.Http;
 public class SimpleHttpListenerResponse : HttpResponse
 {
     private NetworkStream _stream;
-    private bool _headersSent = false;
+    private bool _headersSent;
+    
 
     public int StatusCode { get; set; } = 200;
     public Dictionary<string, string> Headers { get; } = new();
@@ -22,7 +23,7 @@ public class SimpleHttpListenerResponse : HttpResponse
     {
         Console.WriteLine($"[Response.WriteAsync] Writing string, length={content?.Length ?? 0}");
         Console.Out.Flush();
-        await WriteAsync(Encoding.UTF8.GetBytes(content));
+        await WriteAsync(Encoding.UTF8.GetBytes(content ?? string.Empty));
     }
 
     public async Task WriteAsync(byte[] content)
